@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Stmt\ElseIf_;
 
 class UserController extends Controller
 {
@@ -39,23 +40,30 @@ class UserController extends Controller
      */
     public function create()
     {
-        if(User::where('id')->count() < 1 || Auth::user()->profile == 'admin_ti'){
-            return view('auth.register');
-        }
-        if(Auth::user()->profile == 'admin_sis'){
-            return view('registerUser');
-        }
-        if(Auth::user()->profile == 'operador'){
-            return redirect()->back();
-        }
-        if(User::where('id')->count() < 1){
-            return view('auth.register');
-        }
-        if(!Auth::user()){
+        if(Auth::user()){
+            if(Auth::user()->profile == 'admin_sis'){
+                return view('registerUser');
+            }
+            elseif(Auth::user()->profile == 'operador'){
+                return redirect()->back();
+            }
+            elseif(User::where('id')->count() < 1 || Auth::user()->profile == 'admin_ti'){
+                return view('auth.register');
+            }
+            elseif(User::where('id')->count() < 1){
+                return view('auth.register');
+            } else{
+                return redirect()->back();
+            }
+        } else{
             return redirect()->back();
         }
 
-        return redirect()->back();
+        // if(!Auth::user()){
+        //     return redirect()->back();
+        // }
+
+        // return redirect()->back();
     }
 
     /**
@@ -128,6 +136,13 @@ class UserController extends Controller
         return redirect()->route('updateStudent');
     }
 
+    public function editing(Request $request, User $id)
+    {
+        return view('editingUser', [
+            'user' => $id
+        ]);
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -151,6 +166,16 @@ class UserController extends Controller
         return redirect()->route('listUser');
 
         //var_dump($user);
+    }
+
+    public function deleting(User $id)
+    {
+        // $id = $request->id;
+        // $user = User::where('id', '=', $id)->first();
+        $user = User::find('id', '=', $id)->delete();
+
+        return redirect()->route('listUser');
+        // var_dump($user);
     }
 
     public function delete(Request $request, User $user)
@@ -182,7 +207,7 @@ class UserController extends Controller
         $user = User::where('id', '=', $id)->first();
 
         if($user){
-            $user = User::where('id', $id)->delete();
+            $user = User::find('id', $id)->delete();
         } else{
             return redirect()->back()->withInput()->withErrors(['Id do usuário não encontrado!']);
         }

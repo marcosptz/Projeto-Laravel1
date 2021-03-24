@@ -50,7 +50,7 @@
                                     <span class="sub-item">Consultar Aluno</span>
                                 </a>
                             </li>
-                            <li class="{{ (request()->routeIs('editConsStudent')) ? 'active' : '' }}">
+                            {{-- <li class="{{ (request()->routeIs('editConsStudent')) ? 'active' : '' }}">
                                 <a href="{{ route('editConsStudent') }}">
                                     <span class="sub-item">Editar Aluno</span>
                                 </a>
@@ -59,7 +59,7 @@
                                 <a href="{{ route('searchDelete') }}">
                                     <span class="sub-item">Excluir Aluno</span>
                                 </a>
-                            </li>
+                            </li> --}}
                             <li class="{{ (request()->routeIs('pdfStudents')) ? 'active' : '' }}">
                                 <a href="{{ route('pdfStudents') }}">
                                     <span class="sub-item">PDF</span>
@@ -117,7 +117,7 @@
                                     <span class="sub-item">Consultar uma Turma</span>
                                 </a>
                             </li>
-                            <li class="{{ (request()->routeIs('editConsClass')) ? 'active' : '' }}">
+                            {{-- <li class="{{ (request()->routeIs('editConsClass')) ? 'active' : '' }}">
                                 <a href="{{ route('editConsClass') }}">
                                     <span class="sub-item">Editar uma Turma</span>
                                 </a>
@@ -126,7 +126,7 @@
                                 <a href="{{ route('searchClassDelete') }}">
                                     <span class="sub-item">Excluir uma Turma</span>
                                 </a>
-                            </li>
+                            </li> --}}
                             <li class="{{ (request()->routeIs('pdfClass')) ? 'active' : '' }}">
                                 <a href="{{ route('pdfClass') }}">
                                     <span class="sub-item">PDF</span>

@@ -158,7 +158,13 @@ class StudentController extends Controller
 
         student::find($id)->update(['class' => $class]);
 
-        return redirect()->route('registerClass');
+        if($request->sex == 'M' or $request->sex == 'm'){
+            return redirect()->route('registerClass')->withInput()->withErrors(['Aluno '.$request->name. ' matriculado com sucesso na turma ' .$class]);
+        }
+        if($request->sex == 'F' or $request->sex =='f'){
+            return redirect()->route('registerClass')->withInput()->withErrors(['Aluna '.$request->name. ' matriculada com sucesso na turma ' .$class]);
+        }
+        return redirect()->route('registerClass')->withInput()->withErrors(['Aluno '.$request->name. ' matriculado com sucesso na turma ' .$class]);
     }
 
     public function list_register()

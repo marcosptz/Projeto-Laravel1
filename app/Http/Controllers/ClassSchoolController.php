@@ -230,8 +230,8 @@ class ClassSchoolController extends Controller
             return redirect()->back()->withInput()->withErrors(['Turma não encontrada!']);
         }
 
+        return redirect()->route('listClass')->withInput()->withErrors(['Turma ' .$id. ' excluida com sucesso!']);
 
-
-        return redirect()->route('listClass');
+        // return redirect()->route('listClass');
     }
 }

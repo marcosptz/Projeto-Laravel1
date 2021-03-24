@@ -68,7 +68,7 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('/searchClassDelete', 'ClassSchoolController@delete')->name('searchClassDelete');
 
-    Route::get('/deletingClass', 'ClassSchoolController@destroy')->name('deletingClass');
+    Route::get('/deletingClass/{id}', 'ClassSchoolController@destroy')->name('deletingClass');
 
     Route::delete('/delete', 'StudentController@destroy')->name('delete');
 
@@ -82,7 +82,7 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('/resultConsRegistration', 'StudentController@reg_cons_student')->name('resultConsRegistration');
 
-    // Route::post('/register', 'RegisterController@create')->name('register');
+    Route::post('/register', 'RegisterController@create')->name('register');
 
     Route::post('/registration', 'StudentController@reg_student')->name('registration');
 
@@ -129,6 +129,10 @@ Route::middleware(['auth'])->group(function(){
     Route::delete('/destroyUser', 'UserController@destroy')->name('destroyUser');
 
     Route::get('/editConsUser', 'UserController@cons_edit')->name('editConsUser');
+
+    Route::get('/editingUser/{id}', 'UserController@editing')->name('editingUser');
+
+    Route::get('/deletingUser/{id}', 'UserController@deleting')->name('deletingUser');
 
     // Route::post('/storeUser', 'UserController@store')->name('storeUser');
 

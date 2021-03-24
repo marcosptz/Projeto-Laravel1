@@ -9,6 +9,16 @@
                 @csrf
                 <div class="input">
 
+                    <div class="form-group col-md-6">
+                        @if($errors->all())
+                            @foreach($errors->all() as $error)
+                                <div class="alert alert-success" role="alert">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
+                        @endif
+                    </div>
+
                     <input id="profile" type="text" readonly="true" class="form-control @error('profile') is-invalid @enderror" name="profile"
                         value="operador" autocomplete="Operador" autofocus placeholder="Operador">
 
