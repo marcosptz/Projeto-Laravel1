@@ -51,12 +51,12 @@
             <td>{{$student->complement}}</td>
             <td>{{$student->class}}</td>
             <td>
-                <a href="/projeto-laravel-1/public/editingStudent/{{$student->id}}" style="color: #3490dc; text-decoration: none; background-color: transparent;">
+                <a href="/Laravel-2/projeto-laravel-1/public/editingStudent/{{$student->id}}" style="color: #3490dc; text-decoration: none; background-color: transparent;">
                         Editar
                 </a>
             </td>
             <td>
-                <a href="/projeto-laravel-1/public/deleteStudent/{{$student->id}}" style="color: #3490dc; text-decoration: none; background-color: transparent;">
+                <a href="/Laravel-2/projeto-laravel-1/public/deleteStudent/{{$student->id}}" style="color: #3490dc; text-decoration: none; background-color: transparent;">
                         Excluir
                 </a>
             </td>

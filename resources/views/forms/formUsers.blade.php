@@ -37,12 +37,12 @@
             <td>{{$user->profile}}</td>
             <td>{{$user->created_at}}</td>
             <td>
-                <a href="/projeto-laravel-1/public/editingUser/{{$user->id}}" style="color: #3490dc; text-decoration: none; background-color: transparent;">
+                <a href="/Laravel-2/projeto-laravel-1/public/editingUser/{{$user->id}}" style="color: #3490dc; text-decoration: none; background-color: transparent;">
                         Editar
                 </a>
             </td>
             <td>
-                <a href="/projeto-laravel-1/public/deletingUser/{{$user->id}}" style="color: #3490dc; text-decoration: none; background-color: transparent;">
+                <a href="/Laravel-2/projeto-laravel-1/public/deletingUser/{{$user->id}}" style="color: #3490dc; text-decoration: none; background-color: transparent;">
                         Excluir
                 </a>
             </td>

@@ -150,9 +150,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, User $id)
     {
-        $id = $request->id;
+        // $id = $request->id;
         $name = $request->name;
         $email = $request->email;
         $profile = $request->profile;
@@ -172,7 +172,7 @@ class UserController extends Controller
     {
         // $id = $request->id;
         // $user = User::where('id', '=', $id)->first();
-        $user = User::find('id', '=', $id)->delete();
+        $user = User::find($id)->delete();
 
         return redirect()->route('listUser');
         // var_dump($user);
