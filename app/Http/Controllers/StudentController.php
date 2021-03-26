@@ -200,6 +200,15 @@ class StudentController extends Controller
         return redirect()->route('updateStudent');
     }
 
+    public function editing(Request $request, student $id)
+    {
+        return view('editingStudent', [
+            'student' => $id
+        ]);
+
+        //var_dump($id);
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -220,7 +229,7 @@ class StudentController extends Controller
         $number = $request->number;
         $complement = $request->complement;
 
-        if(student::find($id)->update([
+        $student = student::find($id)->update([
             'class' => $class,
             'name' => $name,
             'sex' => $sex,
@@ -231,20 +240,35 @@ class StudentController extends Controller
             'street' => $street,
             'number' => $number,
             'complement' => $complement
-            ])){
-            // student::find($id)->update();
-            if($sex == 'M' or $sex == 'm'){
-                return redirect()->route('listAll')->withInput()->withErrors(['Aluno de nome ' .$name. ' alterado com sucesso']);
-            }
-            if($sex == 'F' or $sex == 'f'){
-                return redirect()->route('listAll')->withInput()->withErrors(['Aluna de nome ' .$name. ' alterado com sucesso']);
-            }
-        } else{
-            return redirect()->back()->withInput()->withErrors(['Erro ao alterar!']);
-        }
+            ]);
+
+            //dd($student);
+
+        // if(student::find($id)->update([
+        //     'class' => $class,
+        //     'name' => $name,
+        //     'sex' => $sex,
+        //     'district' => $district,
+        //     'birth_date' => $birth_date,
+        //     'city' => $city,
+        //     'district' => $district,
+        //     'street' => $street,
+        //     'number' => $number,
+        //     'complement' => $complement
+        //     ])){
+        //     // student::find($id)->update();
+        //     if($sex == 'M' or $sex == 'm'){
+        //         return redirect()->route('listAll')->withInput()->withErrors(['Aluno de nome ' .$name. ' alterado com sucesso']);
+        //     }
+        //     if($sex == 'F' or $sex == 'f'){
+        //         return redirect()->route('listAll')->withInput()->withErrors(['Aluna de nome ' .$name. ' alterado com sucesso']);
+        //     }
+        // } else{
+        //     return redirect()->back()->withInput()->withErrors(['Erro ao alterar!']);
+        // }
 
 
-        // return redirect()->route('listAll');
+        return redirect()->route('listAll');
         // dd($request);
     }
 

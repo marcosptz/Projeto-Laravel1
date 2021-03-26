@@ -49,6 +49,16 @@
             <td><?php echo e($student->number); ?></td>
             <td><?php echo e($student->complement); ?></td>
             <td><?php echo e($student->class); ?></td>
+            <td>
+            <a href="/projeto-laravel-1/public/editingStudent/<?php echo e($student->id); ?>" style="color: #3490dc; text-decoration: none; background-color: transparent;">
+                    Editar
+            </a>
+            </td>
+            <td>
+                <a href="/projeto-laravel-1/public/editingStudent/<?php echo e($student->id); ?>" style="color: #3490dc; text-decoration: none; background-color: transparent;">
+                        Excluir
+                </a>
+                </td>
         </tr>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </table>

@@ -12,7 +12,7 @@ class student extends Model implements Auditable
     use \OwenIt\Auditing\Auditable;
 
     protected $fillable = [
-        'name', 'sex', 'birth_date', 'class'
+        'name', 'sex', 'birth_date', 'class', 'city', 'district', 'street', 'number', 'complement'
     ];
 
     public function turma()

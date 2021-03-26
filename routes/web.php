@@ -64,11 +64,15 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('/searchDelete', 'StudentController@delete')->name('searchDelete');
 
+    Route::get('/deletingStudent/{id}', 'StudentController@deleting')->name('deletingStudent');
+
     Route::get('/searchClassDelete', 'ClassSchoolController@delete')->name('searchClassDelete');
 
     Route::delete('/delete', 'StudentController@destroy')->name('delete');
 
     Route::delete('/deleteClass', 'ClassSchoolController@destroy')->name('deleteClass');
+
+    Route::get('/editingStudent/{id}', 'StudentController@editing')->name('editingStudent');
 
     Route::get('/editConsStudent', 'StudentController@cons_edit')->name('editConsStudent');
 
@@ -95,6 +99,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/listClass', 'ClassSchoolController@index')->name('listClass');
 
     Route::get('/editConsClass', 'ClassSchoolController@cons_edit_class')->name('editConsClass');
+
+    // Route::get('/editingClass', 'ClassSchoolController@editing')->name('editingClass');
 
     Route::get('/consultClass', 'ClassSchoolController@consult')->name('consultClass');
 
