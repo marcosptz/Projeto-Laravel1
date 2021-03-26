@@ -110,34 +110,6 @@ Route::middleware(['auth'])->group(function(){
 
     Route::post('/pdfTeste', 'PdfController@pdfTeste')->name('pdfTeste');
 
-    Route::get('/lista', function() {
-        $collection = collect([
-            ['id' => 1, 'name' => 'John','surname' => 'Constantine', 'age' => 45],
-            ['id' => 2, 'name' => 'Jane', 'surname' => 'Tarzan', 'age' => 33],
-            ['id' => 3, 'name' => 'James', 'surname' => 'Hetfield', 'age' => 56],
-            ['id' => 4, 'name' => 'Pablo', 'surname' => 'Picasso', 'age' => 91],
-            ['id' => 5, 'name' => 'Elton', 'surname' => 'John', 'age' => 72],
-        ]);
-        // dd($collection);
-        $cadastros = json_decode(json_encode($collection));
-        // dd($cadastros);
-        return view('tabela', compact('cadastros'));
-    })->name('lista');
-
-    Route::get('/pdf',function() {
-        $collection = collect([
-            ['id' => 1, 'name' => 'John','surname' => 'Constantine', 'age' => 45],
-            ['id' => 2, 'name' => 'Jane', 'surname' => 'Tarzan', 'age' => 33],
-            ['id' => 3, 'name' => 'James', 'surname' => 'Hetfield', 'age' => 56],
-            ['id' => 4, 'name' => 'Pablo', 'surname' => 'Picasso', 'age' => 91],
-            ['id' => 5, 'name' => 'Elton', 'surname' => 'John', 'age' => 72],
-        ]);
-        $cadastros = json_decode(json_encode($collection));
-        $pdf = PDF::loadView('pdf', compact('cadastros'));
-        // dd($pdf);
-        return $pdf->stream('exemplo.pdf');
-    })->name('pdf');
-
     Route::get('/listUser', 'UserController@index')->name('listUser');
 
     // Route::get('/registerUser', 'UserController@create')->name('registerUser');
