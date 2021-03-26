@@ -52,7 +52,16 @@
                                     <span class="sub-item">Consultar Aluno</span>
                                 </a>
                             </li>
-                            
+                            <li class="<?php echo e((request()->routeIs('editConsStudent')) ? 'active' : ''); ?>">
+                                <a href="<?php echo e(route('editConsStudent')); ?>">
+                                    <span class="sub-item">Editar Aluno</span>
+                                </a>
+                            </li>
+                            <li class="<?php echo e((request()->routeIs('searchDelete')) ? 'active' : ''); ?>">
+                                <a href="<?php echo e(route('searchDelete')); ?>">
+                                    <span class="sub-item">Excluir Aluno</span>
+                                </a>
+                            </li>
                             <li class="<?php echo e((request()->routeIs('pdfStudents')) ? 'active' : ''); ?>">
                                 <a href="<?php echo e(route('pdfStudents')); ?>">
                                     <span class="sub-item">PDF</span>
@@ -110,7 +119,16 @@
                                     <span class="sub-item">Consultar uma Turma</span>
                                 </a>
                             </li>
-                            
+                            <li class="<?php echo e((request()->routeIs('editConsClass')) ? 'active' : ''); ?>">
+                                <a href="<?php echo e(route('editConsClass')); ?>">
+                                    <span class="sub-item">Editar uma Turma</span>
+                                </a>
+                            </li>
+                            <li class="<?php echo e((request()->routeIs('searchClassDelete')) ? 'active' : ''); ?>">
+                                <a href="<?php echo e(route('searchClassDelete')); ?>">
+                                    <span class="sub-item">Excluir uma Turma</span>
+                                </a>
+                            </li>
                             <li class="<?php echo e((request()->routeIs('pdfClass')) ? 'active' : ''); ?>">
                                 <a href="<?php echo e(route('pdfClass')); ?>">
                                     <span class="sub-item">PDF</span>

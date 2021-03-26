@@ -37,16 +37,6 @@
             <td><?php echo e($user->email); ?></td>
             <td><?php echo e($user->profile); ?></td>
             <td><?php echo e($user->created_at); ?></td>
-            <td>
-                <a href="/projeto-laravel-1/public/editingUser/<?php echo e($user->id); ?>" style="color: #3490dc; text-decoration: none; background-color: transparent;">
-                        Editar
-                </a>
-            </td>
-            <td>
-                <a href="/projeto-laravel-1/public/deletingUser/<?php echo e($user->id); ?>" style="color: #3490dc; text-decoration: none; background-color: transparent;">
-                        Excluir
-                </a>
-            </td>
         </tr>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </table>

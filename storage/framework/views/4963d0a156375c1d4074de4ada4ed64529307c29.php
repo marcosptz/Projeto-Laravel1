@@ -26,7 +26,7 @@
     <header>
         <nav class="navbar navbar-expand-md shadow-sm">
             <div class="img">
-                <a href="/projeto-laravel-1/public/home">
+                <a href="/">
                     <img src="<?php echo e(asset('assets/img/logo_prefeitura.png')); ?>" alt="Logo Prefeitura" class="img-navbar">
                 </a>
             </div>

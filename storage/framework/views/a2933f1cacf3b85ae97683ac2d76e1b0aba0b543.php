@@ -37,16 +37,6 @@
             <td><?php echo e($class->description); ?></td>
             <td><?php echo e($class->vacancies); ?></td>
             <td><?php echo e($class->teacher); ?></td>
-            <td>
-                <a href="/projeto-laravel-1/public/editingClass/<?php echo e($class->id); ?>" style="color: #3490dc; text-decoration: none; background-color: transparent;">
-                        Editar
-                </a>
-            </td>
-            <td>
-                <a href="/projeto-laravel-1/public/deletingClass/<?php echo e($class->id); ?>" style="color: #3490dc; text-decoration: none; background-color: transparent;">
-                        Excluir
-                </a>
-            </td>
         </tr>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </table>

@@ -7,17 +7,6 @@
                 <?php echo csrf_field(); ?>
                 <div class="input">
 
-                    <div class="form-group col-md-6">
-                        <?php if($errors->all()): ?>
-                            <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <div class="alert alert-success" role="alert">
-                                    <?php echo e($error); ?>
-
-                                </div>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        <?php endif; ?>
-                    </div>
-
                     <input id="profile" type="text" readonly="true" class="form-control <?php if ($errors->has('profile')) :
 if (isset($message)) { $messageCache = $message; }
 $message = $errors->first('profile'); ?> is-invalid <?php unset($message);
