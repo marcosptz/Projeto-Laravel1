@@ -1,4 +1,4 @@
-<?php $__env->startSection('title','EXEMPLO'); ?>
+<?php $__env->startSection('title','TURMA'); ?>
 <?php $__env->startSection('content'); ?>
 
 <div class="conteudo">

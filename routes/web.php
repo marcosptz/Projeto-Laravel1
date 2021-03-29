@@ -64,9 +64,11 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('/searchDelete', 'StudentController@delete')->name('searchDelete');
 
-    Route::get('/deletingStudent/{id}', 'StudentController@deleting')->name('deletingStudent');
+    Route::get('/deletingStudent/{id}', 'StudentController@destroy')->name('deletingStudent');
 
     Route::get('/searchClassDelete', 'ClassSchoolController@delete')->name('searchClassDelete');
+
+    Route::get('/deletingClass/{id}', 'ClassSchoolController@destroy')->name('deletingClass');
 
     Route::delete('/delete', 'StudentController@destroy')->name('delete');
 
@@ -100,7 +102,7 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('/editConsClass', 'ClassSchoolController@cons_edit_class')->name('editConsClass');
 
-    // Route::get('/editingClass', 'ClassSchoolController@editing')->name('editingClass');
+    Route::get('/editingClass/{id}', 'ClassSchoolController@editing')->name('editingClass');
 
     Route::get('/consultClass', 'ClassSchoolController@consult')->name('consultClass');
 
@@ -122,11 +124,15 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('/deleteUser', 'UserController@delete')->name('deleteUser');
 
+    Route::get('/deletingUser/{id}', 'UserController@destroy')->name('deletingUser');
+
     Route::post('/editUser', 'UserController@edit')->name('editUser');
 
     Route::delete('/destroyUser', 'UserController@destroy')->name('destroyUser');
 
     Route::get('/editConsUser', 'UserController@cons_edit')->name('editConsUser');
+
+    Route::get('/editingUser/{id}', 'UserController@editing')->name('editingUser');
 
     // Route::post('/storeUser', 'UserController@store')->name('storeUser');
 

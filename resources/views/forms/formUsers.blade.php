@@ -12,13 +12,15 @@
     <p>{{date('d/m/y H:i')}}</p>
     <hr>
 
-    @if($errors->all())
-        @foreach($errors->all() as $error)
-            <div class="alert alert-danger" role="alert">
-                {{ $error }}
-            </div>
-        @endforeach
-    @endif
+    <div class="form-group col-md-6">
+        @if($errors->all())
+            @foreach($errors->all() as $error)
+                <div class="alert alert-success" role="alert">
+                    {{ $error }}
+                </div>
+            @endforeach
+        @endif
+    </div>
 
     <table class="table table-striped table-responsive table table-hover">
         <tr>
@@ -36,6 +38,16 @@
             <td>{{$user->email}}</td>
             <td>{{$user->profile}}</td>
             <td>{{$user->created_at}}</td>
+            <td>
+                <a href="/projeto-laravel-1/public/editingUser/{{$user->id}}" style="color: #3490dc; text-decoration: none; background-color: transparent;">
+                        Editar
+                </a>
+            </td>
+            <td>
+                <a href="/projeto-laravel-1/public/deletingUser/{{$user->id}}" style="color: #3490dc; text-decoration: none; background-color: transparent;">
+                        Excluir
+                </a>
+            </td>
         </tr>
         @endforeach
     </table>

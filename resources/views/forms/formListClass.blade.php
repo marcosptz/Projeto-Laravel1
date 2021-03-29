@@ -36,6 +36,16 @@
             <td>{{$class->description}}</td>
             <td>{{$class->vacancies}}</td>
             <td>{{$class->teacher}}</td>
+            <td>
+                <a href="/projeto-laravel-1/public/editingClass/{{$class->id}}" style="color: #3490dc; text-decoration: none; background-color: transparent;">
+                        Editar
+                </a>
+            </td>
+            <td>
+                <a href="/projeto-laravel-1/public/deletingClass/{{$class->id}}" style="color: #3490dc; text-decoration: none; background-color: transparent;">
+                        Excluir
+                </a>
+            </td>
         </tr>
         @endforeach
     </table>

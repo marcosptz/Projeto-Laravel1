@@ -229,7 +229,7 @@ class StudentController extends Controller
         $number = $request->number;
         $complement = $request->complement;
 
-        $student = student::find($id)->update([
+        if(student::find($id)->update([
             'class' => $class,
             'name' => $name,
             'sex' => $sex,
@@ -240,32 +240,17 @@ class StudentController extends Controller
             'street' => $street,
             'number' => $number,
             'complement' => $complement
-            ]);
-
-            //dd($student);
-
-        // if(student::find($id)->update([
-        //     'class' => $class,
-        //     'name' => $name,
-        //     'sex' => $sex,
-        //     'district' => $district,
-        //     'birth_date' => $birth_date,
-        //     'city' => $city,
-        //     'district' => $district,
-        //     'street' => $street,
-        //     'number' => $number,
-        //     'complement' => $complement
-        //     ])){
-        //     // student::find($id)->update();
-        //     if($sex == 'M' or $sex == 'm'){
-        //         return redirect()->route('listAll')->withInput()->withErrors(['Aluno de nome ' .$name. ' alterado com sucesso']);
-        //     }
-        //     if($sex == 'F' or $sex == 'f'){
-        //         return redirect()->route('listAll')->withInput()->withErrors(['Aluna de nome ' .$name. ' alterado com sucesso']);
-        //     }
-        // } else{
-        //     return redirect()->back()->withInput()->withErrors(['Erro ao alterar!']);
-        // }
+            ])){
+            // student::find($id)->update();
+            if($sex == 'M' or $sex == 'm'){
+                return redirect()->route('listAll')->withInput()->withErrors(['Aluno ' .$name. ' alterado com sucesso!']);
+            }
+            if($sex == 'F' or $sex == 'f'){
+                return redirect()->route('listAll')->withInput()->withErrors(['Aluna ' .$name. ' alterada com sucesso!']);
+            }
+        } else{
+            return redirect()->back()->withInput()->withErrors(['Erro ao alterar!']);
+        }
 
 
         return redirect()->route('listAll');
@@ -296,12 +281,10 @@ class StudentController extends Controller
         $student = student::where('id', '=', $id)->first();
 
         if($student){
-            $student = student::where('id', $id)->delete();
+            $student = student::find($id)->delete();
+            return redirect()->route('listAll')->withInput()->withErrors(['Matrícula ' .$id. ' excluida com sucesso!']);
         } else{
             return redirect()->back()->withInput()->withErrors(['Matrícula não encontrada!']);
         }
-
-        //$student->delete();
-        return redirect()->route('listAll')->withInput()->withErrors(['Matrícula ' .$id. ' excluida com sucesso!']);
     }
 }

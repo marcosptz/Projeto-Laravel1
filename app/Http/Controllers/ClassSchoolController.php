@@ -167,6 +167,28 @@ class ClassSchoolController extends Controller
         //var_dump($class);
     }
 
+    public function editing(Request $request, Class_School $id)
+    {
+        // $id = $request->id;
+        // $class = Class_School::where('id', $id)->first();
+
+        // if($class){
+        //     return view('editingClass', [
+        //         'class' => $id
+        //     ]);
+        // } else{
+        //     return redirect()->back()->withInput()->withErrors(['Turma não encontrada!']);
+        // }
+
+        return view('editingClass', [
+            'class' => $id
+        ]);
+
+
+        // return redirect()->route('updateClass');
+        //var_dump($class);
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -181,15 +203,15 @@ class ClassSchoolController extends Controller
         $vacancies = $request->vacancies;
         $teacher = $request->teacher;
 
-        $class = Class_School::where('id', $id)->first();
-
-        $class = Class_School::find($id)->update([
+        if(Class_School::find($id)->update([
             'description' => $description,
             'vacancies' => $vacancies,
             'teacher' => $teacher
-        ]);
-
-        return redirect()->route('listClass');
+        ])){
+            return redirect()->route('listClass')->withInput()->withErrors(['Turma ' .$id. ' alterada com sucesso!']);
+        } else{
+            return redirect()->back()->withInput()->withErrors(['Erro ao alterar!']);
+        }
 
         //var_dump($id);
     }
@@ -206,6 +228,18 @@ class ClassSchoolController extends Controller
         return redirect()->route('deleteClass');
     }
 
+    public function deleting(Request $request, Class_School $id)
+    {
+        // $id = $request->id;
+        // $student = student::where('id', '=', $id)->first();
+
+        return view('deleteClass', [
+            'class' => $id
+        ]);
+
+        return redirect()->route('deleteClass');
+    }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -216,16 +250,14 @@ class ClassSchoolController extends Controller
     {
         $id = $request->id;
         $class = Class_School::where('id', $id)->first();
-        // $class = Class_School::where('id', $id)->delete();
 
         if($class){
-            $class = Class_School::where('id', $id)->delete();
+            $class = Class_School::find($id)->delete();
+            return redirect()->route('listClass')->withInput()->withErrors(['Turma ' .$id. ' excluida com sucesso!']);
         } else{
             return redirect()->back()->withInput()->withErrors(['Turma não encontrada!']);
         }
 
-
-
-        return redirect()->route('listClass');
+        // return redirect()->route('listClass')->withInput()->withErrors(['Turma ' .$id. ' excluida com sucesso!']);
     }
 }

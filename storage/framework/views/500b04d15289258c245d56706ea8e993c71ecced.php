@@ -12,14 +12,16 @@
     <p><?php echo e(date('d/m/y H:i')); ?></p>
     <hr>
 
-    <?php if($errors->all()): ?>
-        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div class="alert alert-danger" role="alert">
-                <?php echo e($error); ?>
+    <div class="form-group col-md-6">
+        <?php if($errors->all()): ?>
+            <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div class="alert alert-success" role="alert">
+                    <?php echo e($error); ?>
 
-            </div>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    <?php endif; ?>
+                </div>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        <?php endif; ?>
+    </div>
 
     <table class="table table-striped table-responsive table table-hover">
         <tr>
@@ -37,6 +39,16 @@
             <td><?php echo e($user->email); ?></td>
             <td><?php echo e($user->profile); ?></td>
             <td><?php echo e($user->created_at); ?></td>
+            <td>
+                <a href="/projeto-laravel-1/public/editingUser/<?php echo e($user->id); ?>" style="color: #3490dc; text-decoration: none; background-color: transparent;">
+                        Editar
+                </a>
+            </td>
+            <td>
+                <a href="/projeto-laravel-1/public/deletingUser/<?php echo e($user->id); ?>" style="color: #3490dc; text-decoration: none; background-color: transparent;">
+                        Excluir
+                </a>
+            </td>
         </tr>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </table>

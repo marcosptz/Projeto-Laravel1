@@ -39,14 +39,14 @@ class UserController extends Controller
      */
     public function create()
     {
-        if(User::where('id')->count() < 1 || Auth::user()->profile == 'admin_ti'){
-            return view('auth.register');
-        }
         if(Auth::user()->profile == 'admin_sis'){
             return view('registerUser');
         }
         if(Auth::user()->profile == 'operador'){
             return redirect()->back();
+        }
+        if(User::where('id')->count() < 1 || Auth::user()->profile == 'admin_ti'){
+            return view('auth.register');
         }
         if(User::where('id')->count() < 1){
             return view('auth.register');
@@ -128,6 +128,23 @@ class UserController extends Controller
         return redirect()->route('updateStudent');
     }
 
+    public function editing(User $id)
+    {
+        if(Auth::user()->profile == 'operador'){
+            return redirect()->back();
+        }
+
+        if(Auth::user()->profile == 'admin_sis'){
+            return redirect()->back();
+        }
+
+        return view('editingUser', [
+            'user' => $id
+        ]);
+
+        // return redirect()->route('updateStudent');
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -148,7 +165,7 @@ class UserController extends Controller
             'profile' => $profile
         ]);
 
-        return redirect()->route('listUser');
+        return redirect()->route('listUser')->withInput()->withErrors(['Usuário ' .$name. ' alterado com sucesso! ']);
 
         //var_dump($user);
     }
@@ -178,6 +195,14 @@ class UserController extends Controller
      */
     public function destroy(Request $request, User $user)
     {
+        if(Auth::user()->profile == 'operador'){
+            return redirect()->back();
+        }
+
+        if(Auth::user()->profile == 'admin_sis'){
+            return redirect()->back();
+        }
+        
         $id = $request->id;
         $user = User::where('id', '=', $id)->first();
 
@@ -186,7 +211,7 @@ class UserController extends Controller
         } else{
             return redirect()->back()->withInput()->withErrors(['Id do usuário não encontrado!']);
         }
-        return redirect()->route('listUser');
+        return redirect()->route('listUser')->withInput()->withErrors(['Usuário ' .$id. ' excluído com sucesso! ']);
 
         //var_dump($user);
     }
