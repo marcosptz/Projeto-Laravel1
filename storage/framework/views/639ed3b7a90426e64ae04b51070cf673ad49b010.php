@@ -52,11 +52,13 @@
             <td>
                 <a href="/projeto-laravel-1/public/editingStudent/<?php echo e($student->id); ?>" style="color: #3490dc; text-decoration: none; background-color: transparent;">
                         Editar
+                        <i class="fa fa-paint-brush" aria-hidden="true"></i>
                 </a>
             </td>
             <td>
                 <a href="/projeto-laravel-1/public/deletingStudent/<?php echo e($student->id); ?>" style="color: #3490dc; text-decoration: none; background-color: transparent;">
                         Excluir
+                        <i class="fa fa-trash" aria-hidden="true"></i>
                 </a>
             </td>
         </tr>

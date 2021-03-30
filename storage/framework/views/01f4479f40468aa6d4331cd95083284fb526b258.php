@@ -39,12 +39,13 @@
         <tr>
             <th>Modelo</th>
             <th>Ação</th>
+            <th>Id</th>
             <th>Usuário</th>
             <th>Data</th>
             <th>Url</th>
             <th>Ip_adrress</th>
             <th>Navegador</th>
-            <th>valores Antigos</th>
+            <th>Valores Antigos</th>
             <th>Valores Novos</th>
         </tr>
 
@@ -52,10 +53,11 @@
         <tr>
             <td><?php echo e($audit->auditable_type); ?> (id: <?php echo e($audit->auditable_id); ?>)</td>
             <td><?php echo e($audit->event); ?></td>
+            <td><?php echo e($audit->user_id); ?></td>
             <td><?php echo e($audit->user->name); ?></td>
             <td><?php echo e($audit->created_at); ?></td>
             <td><?php echo e($audit->url); ?></td>
-            <td><?php echo e($audit->ip_adrress); ?></td>
+            <td><?php echo e($audit->ip_address); ?></td>
             <td><?php echo e($audit->user_agent); ?></td>
             <td>
                 <table class="table table-bordered table-hover" style="width:100%">

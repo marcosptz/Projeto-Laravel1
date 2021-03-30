@@ -38,12 +38,13 @@
         <tr>
             <th>Modelo</th>
             <th>Ação</th>
+            <th>Id</th>
             <th>Usuário</th>
             <th>Data</th>
             <th>Url</th>
             <th>Ip_adrress</th>
             <th>Navegador</th>
-            <th>valores Antigos</th>
+            <th>Valores Antigos</th>
             <th>Valores Novos</th>
         </tr>
 
@@ -51,10 +52,11 @@
         <tr>
             <td>{{$audit->auditable_type }} (id: {{ $audit->auditable_id}})</td>
             <td>{{$audit->event}}</td>
+            <td>{{$audit->user_id}}</td>
             <td>{{$audit->user->name}}</td>
             <td>{{$audit->created_at}}</td>
             <td>{{$audit->url}}</td>
-            <td>{{$audit->ip_adrress}}</td>
+            <td>{{$audit->ip_address}}</td>
             <td>{{$audit->user_agent}}</td>
             <td>
                 <table class="table table-bordered table-hover" style="width:100%">

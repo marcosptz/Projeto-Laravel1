@@ -41,11 +41,13 @@
             <td>
                 <a href="/projeto-laravel-1/public/editingUser/{{$user->id}}" style="color: #3490dc; text-decoration: none; background-color: transparent;">
                         Editar
+                        <i class="fa fa-paint-brush" aria-hidden="true"></i>
                 </a>
             </td>
             <td>
                 <a href="/projeto-laravel-1/public/deletingUser/{{$user->id}}" style="color: #3490dc; text-decoration: none; background-color: transparent;">
                         Excluir
+                        <i class="fa fa-trash" aria-hidden="true"></i>
                 </a>
             </td>
         </tr>
