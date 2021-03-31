@@ -50,13 +50,13 @@
             <td>{{$student->class}}</td>
             <td>
                 <a href="/projeto-laravel-1/public/editingStudent/{{$student->id}}" style="color: #3490dc; text-decoration: none; background-color: transparent;">
-                        Editar
-                        <i class="fa fa-paint-brush" aria-hidden="true"></i>
+                        {{-- Editar --}}
+                        <i class="fas fa-pencil-alt" aria-hidden="true"></i>
                 </a>
             </td>
             <td>
                 <a href="/projeto-laravel-1/public/deletingStudent/{{$student->id}}" style="color: #3490dc; text-decoration: none; background-color: transparent;">
-                        Excluir
+                        {{-- Excluir --}}
                         <i class="fa fa-trash" aria-hidden="true"></i>
                 </a>
             </td>

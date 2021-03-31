@@ -16,8 +16,18 @@ class AuditController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->get();
 
-        return view('auditUser', ['audits' => $audits]);
+        if(Auth::user()->profile == 'operador'){
+            return redirect()->back();
+        }
 
+        if(Auth::user()->profile == 'admin_sis'){
+            return redirect()->back();
+        }
+
+        if(Auth::user()->profile == 'admin_ti'){
+            return view('auditUser', ['audits' => $audits]);
+        }
+        // return view('auditUser', ['audits' => $audits]);
         //var_dump($audits);
     }
 

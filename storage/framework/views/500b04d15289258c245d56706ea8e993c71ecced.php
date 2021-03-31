@@ -42,7 +42,7 @@
             <td>
                 <a href="/projeto-laravel-1/public/editingUser/<?php echo e($user->id); ?>" style="color: #3490dc; text-decoration: none; background-color: transparent;">
                         Editar
-                        <i class="fa fa-paint-brush" aria-hidden="true"></i>
+                        <i class="fas fa-pencil-alt" aria-hidden="true"></i>
                 </a>
             </td>
             <td>

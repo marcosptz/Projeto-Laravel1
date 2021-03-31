@@ -2,7 +2,7 @@
 <nav class="navbar navbar-header navbar-expand-s0" data-background-color="blue">
 
     <div class="container-fluid">
-        <a href="/modeloLeiaute-master/public">
+        <a href="/projeto-laravel-1/public/welcome">
             <img src="<?php echo e(url('assets/img/logo_prefeitura.png')); ?>" alt="Logo Prefeitura" class="img-navbar">
         </a>
         <h2 style="color: white" class="brand-logo nav-title">ESCOLA</h2>

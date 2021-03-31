@@ -60,7 +60,7 @@
                 </li>
                 <li class="nav-item {{ (request()->Is('resultConsRegistration')) || (request()->is('consultRegister')) || (request()->is('registerClass')) ? 'active' : '' }}">
                     <a data-toggle="collapse" href="#sidebarLayouts">
-                        <i class="fas fa-sun" style="font-size:20px" actived></i>
+                        <i class="fa fa-user-plus" style="font-size:20px" actived></i>
                         <p>Matricular Aluno</p>
                         <span class="caret"></span>
                     </a>
@@ -86,7 +86,7 @@
                 </li>
                 <li class="nav-item {{ (request()->Is('cadastrarTurma')) || (request()->is('listClass')) || (request()->is('consultClass')) || (request()->is('editConsClass')) || (request()->is('searchClassDelete')) || (request()->is('pdfClass')) ? 'active' : '' }}">
                     <a data-toggle="collapse" href="#sidebarLayouts2">
-                        <i class="fas fa-bed" actived></i>
+                        <i class="fa fa-address-card" actived></i>
                         <p>Turmas</p>
                         <span class="caret"></span>
                     </a>
