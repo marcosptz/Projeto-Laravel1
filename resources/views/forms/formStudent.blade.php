@@ -64,7 +64,7 @@
                 <label for="endereco" class="control-label">Cidade: *</label>
                 <div class="input-group">
                     <input id="city" type="text" class="form-control @error('city') is-invalid @enderror" name="city"
-                    value="{{ old('city') }}" autocomplete="city" autofocus placeholder="cidade, Estado">
+                    value="{{ old('city') }}" autocomplete="city" autofocus placeholder="Cidade, Estado">
 
                     @error('city')
                     <span class="invalid-feedback" role="alert">

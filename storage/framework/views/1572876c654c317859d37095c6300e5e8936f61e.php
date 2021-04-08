@@ -93,7 +93,7 @@ if (isset($message)) { $messageCache = $message; }
 $message = $errors->first('city'); ?> is-invalid <?php unset($message);
 if (isset($messageCache)) { $message = $messageCache; }
 endif; ?>" name="city"
-                    value="<?php echo e(old('city')); ?>" autocomplete="city" autofocus placeholder="cidade, Estado">
+                    value="<?php echo e(old('city')); ?>" autocomplete="city" autofocus placeholder="Cidade, Estado">
 
                     <?php if ($errors->has('city')) :
 if (isset($message)) { $messageCache = $message; }
