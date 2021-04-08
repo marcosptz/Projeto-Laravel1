@@ -14,7 +14,7 @@
                 <label for="nome" class="control-label">Nome: *</label>
                 <div class="input-group">
                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"
-                    value="{{ old('name') }}" autocomplete="name" autofocus placeholder="Nome completo">
+                    value="{{ old('name') }}" autocomplete="name" autofocus placeholder="Nome completo" required>
 
                     @error('name')
                     <span class="invalid-feedback" role="alert">
@@ -31,7 +31,7 @@
                     <label for="tel" class="control-label">Sexo: *</label>
                     <div class="input-group ">
                         <input id="sex" type="text" class="form-control @error('sex') is-invalid @enderror" name="sex"
-                        value="{{ old('sex') }}" autocomplete="sex" autofocus placeholder="M/F">
+                        value="{{ old('sex') }}" autocomplete="sex" autofocus placeholder="M/F" required>
 
                          @error('sex')
                         <span class="invalid-feedback" role="alert">
@@ -47,7 +47,7 @@
                     <label for="tel2" class="control-label">Data de Nascimento: *</label>
                     <div class="input-group">
                         <input id="birth_date" type="date" class="form-control @error('birth_date') is-invalid @enderror" name="birth_date"
-                        value="{{ old('birth_date') }}" autocomplete="birth_date" autofocus placeholder="M/F">
+                        value="{{ old('birth_date') }}" autocomplete="birth_date" autofocus placeholder="M/F" required>
 
                         @error('birth_date')
                         <span class="invalid-feedback" role="alert">
@@ -64,7 +64,7 @@
                 <label for="endereco" class="control-label">Cidade: *</label>
                 <div class="input-group">
                     <input id="city" type="text" class="form-control @error('city') is-invalid @enderror" name="city"
-                    value="{{ old('city') }}" autocomplete="city" autofocus placeholder="Cidade, Estado">
+                    value="{{ old('city') }}" autocomplete="city" autofocus placeholder="Cidade, Estado" required>
 
                     @error('city')
                     <span class="invalid-feedback" role="alert">
@@ -80,7 +80,7 @@
                 <label for="endereco" class="control-label">Bairro: *</label>
                 <div class="input-group">
                     <input id="district" type="text" class="form-control @error('district') is-invalid @enderror" name="district"
-                    value="{{ old('district') }}" autocomplete="district" autofocus placeholder="Ex: Centro">
+                    value="{{ old('district') }}" autocomplete="district" autofocus placeholder="Ex: Centro" required>
 
                     @error('district')
                     <span class="invalid-feedback" role="alert">
@@ -97,7 +97,7 @@
                     <label for="tel" class="control-label">Rua: *</label>
                     <div class="input-group ">
                         <input id="street" type="text" class="form-control @error('street') is-invalid @enderror" name="street"
-                        value="{{ old('street') }}" autocomplete="street" autofocus placeholder="Ex: Av. Dom João Becker">
+                        value="{{ old('street') }}" autocomplete="street" autofocus placeholder="Ex: Av. Dom João Becker" required>
 
                         @error('street')
                         <span class="invalid-feedback" role="alert">
@@ -113,7 +113,7 @@
                     <label for="tel2" class="control-label">Número: *</label>
                     <div class="input-group">
                         <input id="number" type="number" class="form-control @error('number') is-invalid @enderror" name="number"
-                        value="{{ old('number') }}" autocomplete="number" autofocus placeholder="123...">
+                        value="{{ old('number') }}" autocomplete="number" autofocus placeholder="123..." required>
 
                         @error('number')
                         <span class="invalid-feedback" role="alert">
@@ -130,7 +130,7 @@
                 <label for="email" class="control-label">Complemento: </label>
                 <div class="input-group">
                     <input id="complement" type="text" class="form-control @error('complement') is-invalid @enderror" name="complement"
-                    value="{{ old('complement') }}" autocomplete="complement" autofocus placeholder="Ex: Rota do sol">
+                    value="{{ old('complement') }}" autocomplete="complement" autofocus placeholder="Ex: Rota do sol" required>
 
                     @error('complement')
                     <span class="invalid-feedback" role="alert">

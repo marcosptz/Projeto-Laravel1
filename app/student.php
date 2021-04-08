@@ -20,4 +20,7 @@ class student extends Model implements Auditable
         return $this->belongsTo(Class_School::class, 'class', 'id');
     }
 
+    protected $dates = [
+        'birth_date'
+    ];
 }

@@ -6,7 +6,7 @@
         </div>
         <h6 class="col-12 modal-title text-center">Campos com * são obrigatorios</h6>
         <div class="container col-11">
-            <input type="hidden" id="id" class="form-control">
+            <input type="hidden" id="id" class="form-control" >
 
             
 
@@ -18,7 +18,7 @@ if (isset($message)) { $messageCache = $message; }
 $message = $errors->first('description'); ?> is-invalid <?php unset($message);
 if (isset($messageCache)) { $message = $messageCache; }
 endif; ?>" name="description"
-                    value="<?php echo e(old('description')); ?>" autocomplete="description" autofocus placeholder="Ex: 1ª Série">
+                    value="<?php echo e(old('description')); ?>" autocomplete="description" autofocus placeholder="Ex: 1ª Série" required>
 
                     <?php if ($errors->has('description')) :
 if (isset($message)) { $messageCache = $message; }
@@ -42,7 +42,7 @@ if (isset($message)) { $messageCache = $message; }
 $message = $errors->first('vacancies'); ?> is-invalid <?php unset($message);
 if (isset($messageCache)) { $message = $messageCache; }
 endif; ?>" name="vacancies"
-                        value="<?php echo e(old('vacancies')); ?>" autocomplete="vacancies" autofocus placeholder="Ex: 123...">
+                        value="<?php echo e(old('vacancies')); ?>" autocomplete="vacancies" autofocus placeholder="Ex: 123..." required>
 
                         <?php if ($errors->has('vacancies')) :
 if (isset($message)) { $messageCache = $message; }
@@ -66,7 +66,7 @@ if (isset($message)) { $messageCache = $message; }
 $message = $errors->first('teacher'); ?> is-invalid <?php unset($message);
 if (isset($messageCache)) { $message = $messageCache; }
 endif; ?>" name="teacher"
-                        value="<?php echo e(old('teacher')); ?>" autocomplete="teacher" autofocus placeholder="Professor">
+                        value="<?php echo e(old('teacher')); ?>" autocomplete="teacher" autofocus placeholder="Professor" required>
 
                         <?php if ($errors->has('teacher')) :
 if (isset($message)) { $messageCache = $message; }

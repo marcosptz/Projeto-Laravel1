@@ -6,7 +6,7 @@
         </div>
         <h6 class="col-12 modal-title text-center">Campos com * são obrigatorios</h6>
         <div class="container col-11">
-            <input type="hidden" id="id" class="form-control">
+            <input type="hidden" id="id" class="form-control" >
 
             {{--- Formulario Turma ---}}
 
@@ -14,7 +14,7 @@
                 <label for="nome" class="control-label">Descrição da Turma: *</label>
                 <div class="input-group">
                     <input id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description"
-                    value="{{ old('description') }}" autocomplete="description" autofocus placeholder="Ex: 1ª Série">
+                    value="{{ old('description') }}" autocomplete="description" autofocus placeholder="Ex: 1ª Série" required>
 
                     @error('description')
                     <span class="invalid-feedback" role="alert">
@@ -30,7 +30,7 @@
                     <label for="tel" class="control-label">Quantidade de Vagas: *</label>
                     <div class="input-group ">
                         <input id="vacancies" type="number" class="form-control @error('vacancies') is-invalid @enderror" name="vacancies"
-                        value="{{ old('vacancies') }}" autocomplete="vacancies" autofocus placeholder="Ex: 123...">
+                        value="{{ old('vacancies') }}" autocomplete="vacancies" autofocus placeholder="Ex: 123..." required>
 
                         @error('vacancies')
                         <span class="invalid-feedback" role="alert">
@@ -46,7 +46,7 @@
                     <label for="tel2" class="control-label">Nome do Professor: *</label>
                     <div class="input-group">
                         <input id="teacher" type="text" class="form-control @error('teacher') is-invalid @enderror" name="teacher"
-                        value="{{ old('teacher') }}" autocomplete="teacher" autofocus placeholder="Professor">
+                        value="{{ old('teacher') }}" autocomplete="teacher" autofocus placeholder="Professor" required>
 
                         @error('teacher')
                         <span class="invalid-feedback" role="alert">
