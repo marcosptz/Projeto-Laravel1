@@ -9,7 +9,7 @@
                 @csrf
                 <div class="input">
 
-                    <select name="profile" class="form-select" @error('profile') is-invalid @enderror" aria-label=" Default select example">
+                    <select name="profile" class="form-select" @error('profile') is-invalid @enderror" aria-label=" Default select example" required>
                         <option value="" selected>Selecione o tipo de usuário</option>
                         <option value="admin_ti">Administrador TI</option>
                         <option value="admin_sis">Administrador do Sistema</option>
@@ -23,7 +23,7 @@
                     @enderror
 
                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"
-                        value="{{ old('name') }}" autocomplete="name" autofocus placeholder="Nome">
+                        value="{{ old('name') }}" autocomplete="name" autofocus placeholder="Nome" required>
 
                     @error('name')
                     <span class="invalid-feedback" role="alert">
@@ -32,7 +32,7 @@
                     @enderror
 
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                        name="email" value="{{ old('email') }}" autocomplete="email" autofocus placeholder="Email">
+                        name="email" value="{{ old('email') }}" autocomplete="email" autofocus placeholder="Email" required>
 
                     @error('email')
                     <span class="invalid-feedback" role="alert">

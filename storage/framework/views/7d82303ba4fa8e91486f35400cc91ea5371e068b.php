@@ -11,7 +11,7 @@
 if (isset($message)) { $messageCache = $message; }
 $message = $errors->first('profile'); ?> is-invalid <?php unset($message);
 if (isset($messageCache)) { $message = $messageCache; }
-endif; ?>" aria-label=" Default select example">
+endif; ?>" aria-label=" Default select example" required>
                         <option value="" selected>Selecione o tipo de usuário</option>
                         <option value="admin_ti">Administrador TI</option>
                         <option value="admin_sis">Administrador do Sistema</option>
@@ -34,7 +34,7 @@ if (isset($message)) { $messageCache = $message; }
 $message = $errors->first('name'); ?> is-invalid <?php unset($message);
 if (isset($messageCache)) { $message = $messageCache; }
 endif; ?>" name="name"
-                        value="<?php echo e(old('name')); ?>" autocomplete="name" autofocus placeholder="Nome">
+                        value="<?php echo e(old('name')); ?>" autocomplete="name" autofocus placeholder="Nome" required>
 
                     <?php if ($errors->has('name')) :
 if (isset($message)) { $messageCache = $message; }
@@ -52,7 +52,7 @@ if (isset($message)) { $messageCache = $message; }
 $message = $errors->first('email'); ?> is-invalid <?php unset($message);
 if (isset($messageCache)) { $message = $messageCache; }
 endif; ?>"
-                        name="email" value="<?php echo e(old('email')); ?>" autocomplete="email" autofocus placeholder="Email">
+                        name="email" value="<?php echo e(old('email')); ?>" autocomplete="email" autofocus placeholder="Email" required>
 
                     <?php if ($errors->has('email')) :
 if (isset($message)) { $messageCache = $message; }

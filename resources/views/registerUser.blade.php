@@ -10,10 +10,10 @@
                 <div class="input">
 
                     <input id="profile" type="text" readonly="true" class="form-control @error('profile') is-invalid @enderror" name="profile"
-                        value="operador" autocomplete="Operador" autofocus placeholder="Operador">
+                        value="operador" autocomplete="Operador" autofocus placeholder="Operador" required>
 
                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"
-                        value="{{ old('name') }}" autocomplete="name" autofocus placeholder="Nome">
+                        value="{{ old('name') }}" autocomplete="name" autofocus placeholder="Nome" required>
 
                     @error('name')
                     <span class="invalid-feedback" role="alert">
@@ -22,7 +22,7 @@
                     @enderror
 
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                        name="email" value="{{ old('email') }}" autocomplete="email" autofocus placeholder="Email">
+                        name="email" value="{{ old('email') }}" autocomplete="email" autofocus placeholder="Email" required>
 
                     @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -40,7 +40,7 @@
                     @enderror --}}
 
                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
-                        name="password" required autocomplete="current-password" placeholder="Senha">
+                        name="password" required autocomplete="current-password" placeholder="Senha" required>
 
                     @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -49,7 +49,7 @@
                     @enderror
 
                     <input id="password_confirmation" type="password" class="form-control @error('password_confirmation') is-invalid @enderror"
-                        name="password_confirmation" required autocomplete="current-password" placeholder="Confirmar Senha">
+                        name="password_confirmation" required autocomplete="current-password" placeholder="Confirmar Senha" required>
 
                     @error('password_confirmation')
                     <span class="invalid-feedback" role="alert">
