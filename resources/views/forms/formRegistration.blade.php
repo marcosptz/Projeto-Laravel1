@@ -121,9 +121,17 @@
                         @endif
 
                         <label for="tel2" class="control-label">Número da Turma: *</label>
-                        <div class="input-group">
+                        {{-- <div class="input-group">
                             <input type="number" class="form-control phone_with_ddd" name="class" id="class"
                                 placeholder="Digite o número da turma" />
+                        </div> --}}
+                        <div class="input-group">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Selecione a turma</option>
+                                @foreach ($class as $class)
+                                    <option value={{ $class->id }}>Turma {{ $class->id }} - {{ $class->description }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                 </div>

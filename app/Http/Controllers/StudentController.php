@@ -123,19 +123,24 @@ class StudentController extends Controller
         //return redirect()->route('listar');
     }
 
-    public function reg_student(Request $request)
+    public function reg_student(Request $request, Class_School $class)
     {
-        //$class = new Class_School();
+        // $class = new Class_School();
+        // $class = $request->class;
+        // $class = Class_School::where('id', '=', 3)->first();
+        $class = Class_School::all();
         $id = $request->id;
         $student = student::where('id', '=', $id)->first();
 
         if($student){
             return view('regStudent', [
-                'student' => $student
+                'student' => $student,
+                'class' => $class->all()
             ]);
         } else{
             return redirect()->back()->withInput()->withErrors(['Matrícula não encontrada!']);
         }
+        //var_dump($class->all());
     }
 
     public function reg_cons_student(student $student)
