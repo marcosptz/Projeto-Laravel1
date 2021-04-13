@@ -156,14 +156,14 @@ class StudentController extends Controller
     {
         $id = $request->id;
         $class = $request->class;
-        $stud = Class_School::where('id', '=', $class)->first();
-        if(!$stud){
-            return redirect()->route('resultConsRegistration')->withInput()->withErrors(['Turma inexistente!']);
-        }
+        // $stud = Class_School::where('id', '=', $class)->first();
+        // if(!$stud){
+        //     return redirect()->route('resultConsRegistration')->withInput()->withErrors(['Turma inexistente!']);
+        // }
 
         student::find($id)->update(['class' => $class]);
 
-        return redirect()->route('registerClass');
+        return redirect()->route('registerClass')->withInput()->withErrors(['Aluno ' .$request->name. ' cadastrado na turma ' .$class. ' com sucesso!']);
     }
 
     public function list_register()
